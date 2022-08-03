@@ -8,6 +8,7 @@ namespace RailwayReservationSystem
 {
     public class Reservation
     {
+        private static int id = 101;
         public int TicketNo { get; set; }
         public int TrainNo { get; set; }
         public string Name { get; set; }
@@ -17,7 +18,7 @@ namespace RailwayReservationSystem
 
         public Reservation(Train train, Schedule schedule, Passenger passenger)
         {
-            this.TicketNo = -1;
+            this.TicketNo = id++;
             this.TrainNo = train.TrainNo;
             this.Name = passenger.Name;
             this.Source = schedule.Source;
@@ -28,14 +29,13 @@ namespace RailwayReservationSystem
 
         public void View()
         {
-            Console.WriteLine("Ticket No.: "+this.TicketNo);
-            Console.WriteLine("Train No.: " + this.TrainNo);
-            Console.WriteLine("Name : " + this.Name);
-            Console.WriteLine("From : " + this.Source);
-            Console.WriteLine("To : " + this.Destination);
-            Console.WriteLine("Departure : " + this.Departure);
+            Console.WriteLine("Ticket # "+this.TicketNo);
+            Console.WriteLine("Train No: T-" + this.TrainNo);
+            Console.WriteLine("Name: " + this.Name);
+            Console.WriteLine("From: " + this.Source);
+            Console.WriteLine("To: " + this.Destination);
+            Console.WriteLine("Departure: " + this.Departure);
         }
-
         
     }
 }

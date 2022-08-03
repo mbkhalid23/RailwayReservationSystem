@@ -8,6 +8,7 @@ namespace RailwayReservationSystem
 {
     public class Schedule
     {
+        private static int id = 101;
         public int SchduleId { get; set; }
         public int TrainNo { get; set; }
         public string Source { get; set; }
@@ -20,6 +21,7 @@ namespace RailwayReservationSystem
 
         public Schedule(int trainNo, string source, string destination, DateOnly date, TimeOnly departure, TimeOnly arrival)
         {
+            this.SchduleId = id++;
             this.TrainNo = trainNo;
             this.Source = source;
             this.Destination = destination;
@@ -31,8 +33,8 @@ namespace RailwayReservationSystem
 
         public void View()
         {
-            Console.WriteLine("TrainNo\tFrom\t\tTo\t\tDate\t\tDeparture\tArrival\t\tHours");
-            Console.WriteLine(this.TrainNo+"\t"+this.Source+"\t"+this.Destination+"\t\t"+this.Date+"\t"+Departure+"\t"+Arrival+"\t\t"+this.Journey.Hours+":"+this.Journey.Minutes);
+            Console.WriteLine("Schedule ID\tTrainNo\tFrom\t\tTo\t\tDate\t\tDeparture\tArrival\t\tHours");
+            Console.WriteLine("S-"+this.SchduleId+"\t\tT-"+this.TrainNo+"\t"+this.Source+"\t"+this.Destination+"\t\t"+this.Date+"\t"+Departure+"\t"+Arrival+"\t\t"+this.Journey.Hours+":"+this.Journey.Minutes);
         }
     }
 }

@@ -8,14 +8,15 @@ namespace RailwayReservationSystem
 {
     public class Train
     {
+        private static int id = 101;
         public int TrainNo { get; set; }
         public int Capacity { get; set; }
         public int SeatsBooked { get; set; }
         public int SeatsAvailable { get; set; }
 
-        public Train(int trainNo, int capacity)
+        public Train(int capacity)
         {
-            this.TrainNo = trainNo;
+            this.TrainNo = id++;
             this.Capacity = capacity;
             this.SeatsAvailable = capacity;
             this.SeatsBooked = 0;
@@ -23,7 +24,7 @@ namespace RailwayReservationSystem
 
         public void View()
         {
-            Console.WriteLine("Train No. "+this.TrainNo);
+            Console.WriteLine("Train No: T-"+this.TrainNo);
             Console.WriteLine("Seating Capacity: "+this.Capacity);
             Console.WriteLine("Seats Booked: " + this.SeatsBooked);
             Console.WriteLine("Seats Available: " + this.SeatsAvailable);

@@ -33,18 +33,22 @@ namespace RailwayReservationSystem
             //passenger.View();
             //Console.WriteLine("");
 
-            Trains.Add(new Train(213, 200));
+            Trains.Add(new Train(200));
+            Trains.Add(new Train(100));
             //Console.WriteLine("TRAIN");
             //train.View();
             //Console.WriteLine("");
 
-            Schedules.Add(new Schedule(501, "Islamabad", "Karachi", date2, dep, arr));
+            Schedules.Add(new Schedule(Trains[0].TrainNo, "Islamabad", "Karachi", date2, dep, arr));
+            Schedules.Add(new Schedule(Trains[1].TrainNo, "Faisalabad", "Multan", date2, dep, arr));
             //Console.WriteLine("SCHEDULE");
             //schedule.View();
             //Console.WriteLine("");
 
             Reservations.Add(new Reservation(Trains[0], Schedules[0], Passengers[0]));
             Reservations.Add(new Reservation(Trains[0], Schedules[0], Passengers[1]));
+            Reservations.Add(new Reservation(Trains[1], Schedules[0], Passengers[0]));
+            Reservations.Add(new Reservation(Trains[1], Schedules[0], Passengers[1]));
             //Console.WriteLine("RESERVATION");
             //reservation.View();
             //Console.WriteLine("");
