@@ -30,6 +30,15 @@ namespace RailwayReservationSystem
             Console.WriteLine("Seats Available: " + this.SeatsAvailable);
         }
 
+        public void ViewAll(List<Train> Trains)
+        {
+            Console.WriteLine("TrainNo\tTotal Seats\tSeats Booked\tSeats Available");
+            foreach (var train in Trains)
+            {
+                Console.WriteLine("T-" + train.TrainNo + "\t" + train.Capacity + "\t\t" + train.SeatsBooked+ "\t\t" + train.SeatsAvailable);
+            }
+        }
+
         public void ReserveSeat ()
         {
             if (this.SeatsAvailable > 0) 

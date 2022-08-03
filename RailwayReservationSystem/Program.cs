@@ -65,19 +65,14 @@ namespace RailwayReservationSystem
                 Console.WriteLine();
             }
 
-            foreach (var train in Trains)
-            {
-                Console.WriteLine("TRAINS");
-                train.View();
-                Console.WriteLine();
-            }
+            Console.WriteLine("TRAINS");
+            Trains[0].ViewAll(Trains);
+            Console.WriteLine();
+            
 
-            foreach (var schedule in Schedules)
-            {
-                Console.WriteLine("SCHEDULE");
-                schedule.View();
-                Console.WriteLine();
-            }
+            Console.WriteLine("SCHEDULE");
+            Schedules[0].View(Schedules);
+            Console.WriteLine();
 
             foreach (var reservation in Reservations)
             {

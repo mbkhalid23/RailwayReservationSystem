@@ -31,10 +31,14 @@ namespace RailwayReservationSystem
             this.Journey = arrival - departure;
         }
 
-        public void View()
+        public void View(List<Schedule> Schedules)
         {
-            Console.WriteLine("Schedule ID\tTrainNo\tFrom\t\tTo\t\tDate\t\tDeparture\tArrival\t\tHours");
-            Console.WriteLine("S-"+this.SchduleId+"\t\tT-"+this.TrainNo+"\t"+this.Source+"\t"+this.Destination+"\t\t"+this.Date+"\t"+Departure+"\t"+Arrival+"\t\t"+this.Journey.Hours+":"+this.Journey.Minutes);
+            Console.WriteLine("ScheduleID\tTrainNo\tFrom\t\tTo\t\tDate\t\tDeparture\tArrival\t\tHours");
+            foreach (var schedule in Schedules)
+            {
+                Console.WriteLine("S-" + schedule.SchduleId + "\t\tT-" + schedule.TrainNo + "\t" + schedule.Source + "\t" + schedule.Destination + "\t\t" + schedule.Date + "\t" + schedule.Departure + "\t" + schedule.Arrival + "\t\t" + schedule.Journey.Hours + ":" + schedule.Journey.Minutes);
+            }
+            
         }
     }
 }

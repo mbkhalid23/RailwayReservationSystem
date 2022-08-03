@@ -29,7 +29,7 @@ namespace RailwayReservationSystem
 
         public void View()
         {
-            Console.WriteLine("Ticket # "+this.TicketNo);
+            Console.WriteLine("Ticket # R-"+this.TicketNo);
             Console.WriteLine("Train No: T-" + this.TrainNo);
             Console.WriteLine("Name: " + this.Name);
             Console.WriteLine("From: " + this.Source);
