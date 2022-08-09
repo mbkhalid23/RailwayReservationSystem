@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,8 @@ namespace RailwayReservationSystem
 {
     public class Schedule
     {
-        private static int id = 101;
+        //private static int id = 101;
+        [Key]
         public int SchduleId { get; set; }
         public int TrainNo { get; set; }
         public string Source { get; set; }
@@ -18,10 +20,13 @@ namespace RailwayReservationSystem
         public TimeOnly Arrival { get; set; }
         public TimeSpan Journey { get; set; }
 
+        public Schedule()
+        {
+
+        }
 
         public Schedule(int trainNo, string source, string destination, DateOnly date, TimeOnly departure, TimeOnly arrival)
         {
-            this.SchduleId = id++;
             this.TrainNo = trainNo;
             this.Source = source;
             this.Destination = destination;

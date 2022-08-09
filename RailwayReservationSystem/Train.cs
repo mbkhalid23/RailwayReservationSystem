@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,15 +9,19 @@ namespace RailwayReservationSystem
 {
     public class Train
     {
-        private static int id = 101;
+        //private static int id = 101;
+        [Key]
         public int TrainNo { get; set; }
         public int Capacity { get; set; }
         public int SeatsBooked { get; set; }
         public int SeatsAvailable { get; set; }
 
+        public Train()
+        {
+        }
+
         public Train(int capacity)
         {
-            this.TrainNo = id++;
             this.Capacity = capacity;
             this.SeatsAvailable = capacity;
             this.SeatsBooked = 0;

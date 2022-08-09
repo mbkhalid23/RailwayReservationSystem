@@ -15,7 +15,16 @@ namespace RailwayReservationSystem.Data
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-6BSINQC;Database=RRSDB;Trusted_Connection=True;");
         }
 
-       // public DbSet<Passenger> Passengers { get; set; }
+        public DbSet<Passenger> Passengers { get; set; }
+        public DbSet<Train> Trains { get; set; }
+        public DbSet<Schedule> Schedule { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Seed();
+        }
     }
 }
  
