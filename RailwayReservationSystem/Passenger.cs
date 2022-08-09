@@ -14,7 +14,7 @@ namespace RailwayReservationSystem
         public int CNIC { get; set; }
         public string Name { get; set; }
         public string Gender { get; set; }
-        public DateOnly DOB { get; set; }
+        public DateTime DOB { get; set; }
         public int Age { get; set; }
         public int Contact { get; set; }
 
@@ -22,13 +22,13 @@ namespace RailwayReservationSystem
         {
         }
 
-        public Passenger(int CNIC, string name, string gender, DateOnly dob, int contact)
+        public Passenger(int CNIC, string name, string gender, DateTime dob, int contact)
         {
             this.CNIC = CNIC;
             this.Name = name;
             this.Gender = gender;
             this.DOB = dob;
-            this.Age = (DateOnly.FromDateTime(DateTime.Today).DayNumber - dob.DayNumber)/365;
+            this.Age = (DateTime.Now - this.DOB).Days/365;
             this.Contact = contact;
         }
 

@@ -9,7 +9,6 @@ namespace RailwayReservationSystem
 {
     public class Train
     {
-        //private static int id = 101;
         [Key]
         public int TrainNo { get; set; }
         public int Capacity { get; set; }

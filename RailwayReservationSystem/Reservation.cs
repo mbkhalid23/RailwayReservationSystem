@@ -9,7 +9,6 @@ namespace RailwayReservationSystem
 {
     public class Reservation
     {
-        //private static int id = 101;
         [Key]
         public int TicketNo { get; set; }
         public int TrainNo { get; set; }
@@ -29,7 +28,7 @@ namespace RailwayReservationSystem
             this.Name = passenger.Name;
             this.Source = schedule.Source;
             this.Destination = schedule.Destination;
-            this.Departure = schedule.Date.ToDateTime(schedule.Departure);
+            this.Departure = schedule.Departure;
             train.ReserveSeat();
         }
 
