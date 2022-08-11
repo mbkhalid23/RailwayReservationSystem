@@ -15,6 +15,9 @@ namespace RailwayReservationSystem
         public int SeatsBooked { get; set; }
         public int SeatsAvailable { get; set; }
 
+        //Navigation Entries
+        public ICollection<Schedule> Schedule { get; set; }
+
         public Train()
         {
         }
