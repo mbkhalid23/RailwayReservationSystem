@@ -12,7 +12,7 @@ using RailwayReservationSystem.Data;
 namespace RailwayReservationSystem.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220811074744_Initial Migration")]
+    [Migration("20220811135812_Initial Migration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,11 +35,13 @@ namespace RailwayReservationSystem.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("CNIC")
-                        .HasColumnType("int");
+                    b.Property<string>("CNIC")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Contact")
-                        .HasColumnType("int");
+                    b.Property<string>("Contact")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DOB")
                         .HasColumnType("datetime2");
@@ -105,7 +107,7 @@ namespace RailwayReservationSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TrainNo")
+                    b.Property<int?>("TrainNo")
                         .HasColumnType("int");
 
                     b.HasKey("ScheduleId");
@@ -160,9 +162,7 @@ namespace RailwayReservationSystem.Migrations
                 {
                     b.HasOne("RailwayReservationSystem.Train", "Train")
                         .WithMany("Schedule")
-                        .HasForeignKey("TrainNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TrainNo");
 
                     b.Navigation("Train");
                 });

@@ -12,11 +12,11 @@ namespace RailwayReservationSystem
         [Key]
         public int PassengerId { get; set; }
         public string Name { get; set; }
-        public int CNIC { get; set; }
+        public string CNIC { get; set; }
         public string Gender { get; set; }
         public DateTime DOB { get; set; }
         public int Age { get; set; }
-        public int Contact { get; set; }
+        public string Contact { get; set; }
 
         //Navigation Entries
         public ICollection<Reservation> Reservations { get; set; }
@@ -25,7 +25,7 @@ namespace RailwayReservationSystem
         {
         }
 
-        public Passenger(string name, int CNIC, string gender, DateTime dob, int contact)
+        public Passenger(string name, string CNIC, string gender, DateTime dob, string contact)
         {
             this.Name = name;
             this.CNIC = CNIC;

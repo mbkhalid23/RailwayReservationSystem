@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,11 @@ namespace RailwayReservationSystem
         public TimeSpan Journey { get; set; }
 
         //Navigation Entries
-        public ICollection<Reservation> Reservations { get; set; }
+        [ForeignKey("Train")]
+        public int? TrainNo { get; set; }
         public Train Train { get; set; }
-
+        public ICollection<Reservation> Reservations { get; set; }
+        
         public Schedule()
         {
 
@@ -42,7 +45,7 @@ namespace RailwayReservationSystem
             {
                 Console.WriteLine("S-" + schedule.ScheduleId + "\t\tT-" + schedule.Source + "\t" + schedule.Destination + "\t\t" + schedule.Departure + "\t" + schedule.Arrival + "\t\t" + schedule.Journey.Hours + ":" + schedule.Journey.Minutes);
             }
-            
+
         }
     }
 }

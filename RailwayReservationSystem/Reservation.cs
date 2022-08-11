@@ -13,7 +13,9 @@ namespace RailwayReservationSystem
         public int TicketNo { get; set; }
 
         //Navigation Entries
+        public int PassengerId { get; set; }
         public Passenger Passenger { get; set; }
+        public int ScheduleId { get; set; }
         public Schedule Schedule { get; set; }
 
         public Reservation()
