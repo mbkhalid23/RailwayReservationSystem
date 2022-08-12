@@ -47,5 +47,18 @@ namespace RailwayReservationSystem
             }
 
         }
+
+        public void Viewdb()
+        {
+            Console.WriteLine($"S-ID: {this.ScheduleId}");
+            Console.WriteLine($"From: {this.Source}");
+            Console.WriteLine($"To: {this.Destination}");
+            Console.WriteLine($"Departure: {this.Departure}");
+            Console.WriteLine($"Arrival: {this.Arrival}");
+            Console.WriteLine($"Journey(hrs): {this.Journey}y");
+            Console.WriteLine($"TrainNo:{this.TrainNo}");
+            Console.WriteLine(new String('-', 30));
+
+        }
     }
 }

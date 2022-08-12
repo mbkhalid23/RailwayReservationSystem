@@ -37,13 +37,14 @@ namespace RailwayReservationSystem
 
         public void View()
         {
-            Console.WriteLine($"ID: {this.PassengerId}");
-            Console.WriteLine($"CNIC: {this.CNIC}");
+            Console.WriteLine($"P-ID: {this.PassengerId}");
             Console.WriteLine($"Name: {this.Name}");
+            Console.WriteLine($"CNIC: {this.CNIC}");
             Console.WriteLine($"Gender: {this.Gender}");
-            Console.WriteLine($"DOB: {this.DOB}");
+            Console.WriteLine($"DOB: {this.DOB.ToShortDateString()}");
             Console.WriteLine($"Age: {this.Age}y");
             Console.WriteLine($"Contact: {this.Contact}");
+            Console.WriteLine(new String('-', 30));
         }
     }
 }
