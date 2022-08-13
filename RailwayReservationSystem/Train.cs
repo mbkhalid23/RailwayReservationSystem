@@ -22,13 +22,6 @@ namespace RailwayReservationSystem
         {
         }
 
-        public Train(int capacity)
-        {
-            this.Capacity = capacity;
-            this.SeatsAvailable = capacity;
-            this.SeatsBooked = 0;
-        }
-
         public void View()
         {
             Console.WriteLine("Train No: T-"+this.TrainNo);

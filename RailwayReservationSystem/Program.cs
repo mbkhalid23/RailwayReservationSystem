@@ -24,37 +24,42 @@ namespace RailwayReservationSystem
             Console.WriteLine("Departure: yyyy-mm-dd");
             DateTime dep = DateTime.Parse(Console.ReadLine());
 
-            var passenger = (from p in context.Passengers
-                       where p.Name == name
-                       select p).FirstOrDefault();
+            var reservation = new Reservation();
+            reservation.AddReservation(name, frm, to, dep);
 
-            passenger.View();
+            //var passenger = (from p in context.Passengers
+            //           where p.Name == name
+            //           select p).FirstOrDefault();
 
-            var schedule = (from s in context.Schedule
-                       where s.Source == frm && s.Destination == to && s.Departure.Date == dep.Date
-                       select s).FirstOrDefault();
+            //passenger.View();
 
-            
-                schedule.Viewdb();
-                
 
-            var train = (from t in context.Trains
-                       where t.TrainNo == schedule.TrainNo
-                       select t).FirstOrDefault();
+            //var schedule = (from s in context.Schedule
+            //                where s.Source == frm && s.Destination == to && s.Departure.Date == dep.Date
+            //                select s).FirstOrDefault();
 
-            train.View();
+            //schedule.Viewdb();
 
-            var reservation = new Reservation
-            {
-                PassengerId = passenger.PassengerId,
-                ScheduleId = schedule.ScheduleId
-            };
 
-            context.Reservations.Add(reservation);
+            //var train = (from t in context.Trains
+            //             where t.TrainNo == schedule.TrainNo
+            //             select t).FirstOrDefault();
 
-            train.ReserveSeat();
+            //train.View();
 
-            context.SaveChanges();
+            //var reservation = new Reservation
+            //{
+            //    PassengerId = passenger.PassengerId,
+            //    ScheduleId = schedule.ScheduleId
+            //};
+
+            //context.Reservations.Add(reservation);
+
+            //schedule.Train.ReserveSeat();
+
+            ////train.ReserveSeat();
+
+            //context.SaveChanges();
 
 
 

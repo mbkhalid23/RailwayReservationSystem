@@ -25,16 +25,6 @@ namespace RailwayReservationSystem
         {
         }
 
-        public Passenger(string name, string CNIC, string gender, DateTime dob, string contact)
-        {
-            this.Name = name;
-            this.CNIC = CNIC;
-            this.Gender = gender;
-            this.DOB = dob;
-            this.Age = (DateTime.Now - this.DOB).Days/365;
-            this.Contact = contact;
-        }
-
         public void View()
         {
             Console.WriteLine($"P-ID: {this.PassengerId}");
