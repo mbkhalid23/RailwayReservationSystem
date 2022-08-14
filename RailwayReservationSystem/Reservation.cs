@@ -19,21 +19,6 @@ namespace RailwayReservationSystem
         public int ScheduleId { get; set; }
         public Schedule Schedule { get; set; }
 
-        public Reservation()
-        {
-
-        }
-
-        public void View()
-        {
-            Console.WriteLine("Ticket# R-" + this.TicketNo);
-            Console.WriteLine("Train No: T-" + this.Schedule.TrainNo);
-            Console.WriteLine("Name: " + this.Passenger.Name);
-            Console.WriteLine("From: " + this.Schedule.Source);
-            Console.WriteLine("To: " + this.Schedule.Destination);
-            Console.WriteLine("Departure: " + this.Schedule.Departure);
-        }
-
         public void AddReservation(String name, string frm, string to, DateTime dep)
         {
             using var context = new ApplicationDbContext();
@@ -70,6 +55,18 @@ namespace RailwayReservationSystem
 
             context.SaveChanges();
         }
+
+
+        public void View()
+        {
+            Console.WriteLine("Ticket# R-" + this.TicketNo);
+            Console.WriteLine("Train No: T-" + this.Schedule.TrainNo);
+            Console.WriteLine("Name: " + this.Passenger.Name);
+            Console.WriteLine("From: " + this.Schedule.Source);
+            Console.WriteLine("To: " + this.Schedule.Destination);
+            Console.WriteLine("Departure: " + this.Schedule.Departure);
+        }
+
         
     }
 }

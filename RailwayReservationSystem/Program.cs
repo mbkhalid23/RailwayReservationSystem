@@ -10,22 +10,28 @@ namespace RailwayReservationSystem
 {
     class Program
     {
+        static void NewTrain(int capacity)
+        {
+            var NewTrain = new Train();
+            NewTrain.AddNew(capacity);
+        }
+
         static void MakeReservation()
         {
-            using var context = new ApplicationDbContext();
+            //using var context = new ApplicationDbContext();
 
-            Console.WriteLine("Enter Your Name: ");
-            string name = Console.ReadLine();
+            //Console.WriteLine("Enter Your Name: ");
+            //string name = Console.ReadLine();
 
-            Console.WriteLine("From: ");
-            string frm = Console.ReadLine();
-            Console.WriteLine("To: ");
-            string to = Console.ReadLine();
-            Console.WriteLine("Departure: yyyy-mm-dd");
-            DateTime dep = DateTime.Parse(Console.ReadLine());
+            //Console.WriteLine("From: ");
+            //string frm = Console.ReadLine();
+            //Console.WriteLine("To: ");
+            //string to = Console.ReadLine();
+            //Console.WriteLine("Departure: yyyy-mm-dd");
+            //DateTime dep = DateTime.Parse(Console.ReadLine());
 
-            var reservation = new Reservation();
-            reservation.AddReservation(name, frm, to, dep);
+            //var reservation = new Reservation();
+            //reservation.AddReservation(name, frm, to, dep);
 
             //var passenger = (from p in context.Passengers
             //           where p.Name == name
@@ -68,7 +74,19 @@ namespace RailwayReservationSystem
 
         static void Main()
         {
-            Program.MakeReservation();
+            //Program.NewTrain(250);
+
+            var train = new Train();
+            Console.WriteLine("Enter TrainNo: ");
+            //train.Update(int.Parse(Console.ReadLine()));
+
+            //train.View();
+
+            train.Remove(int.Parse(Console.ReadLine()));
+
+
+
+            //Program.MakeReservation();
 
             //using (var context = new ApplicationDbContext())
             //{

@@ -21,10 +21,6 @@ namespace RailwayReservationSystem
         //Navigation Entries
         public ICollection<Reservation> Reservations { get; set; }
 
-        public Passenger()
-        {
-        }
-
         public void View()
         {
             Console.WriteLine($"P-ID: {this.PassengerId}");

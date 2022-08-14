@@ -23,12 +23,7 @@ namespace RailwayReservationSystem
         public int? TrainNo { get; set; }
         public Train Train { get; set; }
         public ICollection<Reservation> Reservations { get; set; }
-        
-        public Schedule()
-        {
-
-        }
-        
+                
         public void View()
         {
             Console.WriteLine($"S-ID: {this.ScheduleId}");
