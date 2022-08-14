@@ -10,11 +10,11 @@ namespace RailwayReservationSystem
 {
     class Program
     {
-        static void NewTrain(int capacity)
-        {
-            var NewTrain = new Train();
-            NewTrain.AddNew(capacity);
-        }
+        //static void NewTrain(int capacity)
+        //{
+        //    var NewTrain = new Train();
+        //    NewTrain.AddNew(capacity);
+        //}
 
         static void MakeReservation()
         {
@@ -74,15 +74,22 @@ namespace RailwayReservationSystem
 
         static void Main()
         {
-            //Program.NewTrain(250);
-
+            //Console.WriteLine("Enter Train Capacity");
+            //var capacity = int.Parse(Console.ReadLine());
             var train = new Train();
-            Console.WriteLine("Enter TrainNo: ");
-            //train.Update(int.Parse(Console.ReadLine()));
 
-            //train.View();
+            train.ViewAll();
 
-            train.Remove(int.Parse(Console.ReadLine()));
+            //var train = new Train();
+            //Console.WriteLine("Enter TrainNo: ");
+            ////train.Update(int.Parse(Console.ReadLine()));
+
+            ////train.View();
+            //Console.WriteLine("Enter Updated Train Capacity: ");
+
+            //train.Capacity = int.Parse(Console.ReadLine());
+
+            //train.Remove(int.Parse(Console.ReadLine()));
 
 
 
@@ -90,24 +97,24 @@ namespace RailwayReservationSystem
 
             //using (var context = new ApplicationDbContext())
             //{
-                //var passenger = new Passenger()
-                //{
-                //    Name = "Bilal Khalid",
-                //    CNIC = "61101-5616272-1",
-                //    Gender = "M",
-                //    DOB = new DateTime(1996, 07, 17),
-                //    Age = 26,
-                //    Contact = "+92-307-5266797"
-                //};
+            //var passenger = new Passenger()
+            //{
+            //    Name = "Bilal Khalid",
+            //    CNIC = "61101-5616272-1",
+            //    Gender = "M",
+            //    DOB = new DateTime(1996, 07, 17),
+            //    Age = 26,
+            //    Contact = "+92-307-5266797"
+            //};
 
-                //context.Passengers.Add(passenger);
+            //context.Passengers.Add(passenger);
 
-                //context.SaveChanges();
+            //context.SaveChanges();
 
             //    var pas = (from passenger in context.Passengers
             //                    where passenger.Name == "Ahsan"
             //                    select new Passenger { PassengerId =  passenger.PassengerId }).FirstOrDefault();
-                
+
             //    pas.View();
 
             //    var dep = new DateTime(2022, 08, 09, 11, 30, 00);
@@ -137,7 +144,7 @@ namespace RailwayReservationSystem
             //    context.SaveChanges();
             //}
 
-            
+
 
             //var Passengers = new List<Passenger> { };
             //var Trains = new List<Train> { };
