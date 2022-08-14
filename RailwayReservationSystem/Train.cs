@@ -27,9 +27,9 @@ namespace RailwayReservationSystem
         {
             using var context = new ApplicationDbContext();
 
-            Capacity = capacity;
-            SeatsAvailable = capacity;
-            SeatsBooked = 0;
+            this.Capacity = capacity;
+            this.SeatsAvailable = capacity;
+            this.SeatsBooked = 0;
 
             context.Trains.Add(this);
 

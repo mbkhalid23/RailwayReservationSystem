@@ -74,11 +74,30 @@ namespace RailwayReservationSystem
 
         static void Main()
         {
+
+            //var passenger = new Passenger("Imran Khan", "34121-6273976-3", "M", new DateTime(1960, 8, 14), "+92-321-2188208");
+            var passenger = new Passenger();
+
+            DateTime dob = new DateTime();
+
+            string input = Console.ReadLine();
+            if (input != "")
+            {
+                dob = DateTime.Parse(input);
+            }
+            else
+            {
+                dob = DateTime.MinValue;
+            }
+            passenger.Update("61101-5621752-1", "M Bilal", "",dob, "+92-332-5462212");
+
+            passenger.ViewAll();
+
             //Console.WriteLine("Enter Train Capacity");
             //var capacity = int.Parse(Console.ReadLine());
-            var train = new Train();
+            //var train = new Train();
 
-            train.ViewAll();
+            //train.ViewAll();
 
             //var train = new Train();
             //Console.WriteLine("Enter TrainNo: ");
