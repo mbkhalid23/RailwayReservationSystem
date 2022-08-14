@@ -19,21 +19,21 @@ namespace RailwayReservationSystem
         //Navigation Entries
         public ICollection<Schedule> Schedule { get; set; }
 
-        //public void AddNew(int capacity)
-        //{
-        //    using var context = new ApplicationDbContext();
+        public void AddNew(int capacity)
+        {
+            using var context = new ApplicationDbContext();
 
-        //    var NewTrain = new Train
-        //    {
-        //        Capacity = capacity,
-        //        SeatsAvailable = capacity,
-        //        SeatsBooked = 0
-        //    };
+            var NewTrain = new Train
+            {
+                Capacity = capacity,
+                SeatsAvailable = capacity,
+                SeatsBooked = 0
+            };
 
-        //    context.Trains.Add(NewTrain);
+            context.Trains.Add(NewTrain);
 
-        //    context.SaveChanges();
-        //}
+            context.SaveChanges();
+        }
         public void View()
         {
             Console.WriteLine("Train No: T-" + this.TrainNo);
@@ -42,33 +42,33 @@ namespace RailwayReservationSystem
             Console.WriteLine("Seats Available: " + this.SeatsAvailable);
             Console.WriteLine(new String('-', 30));
         }
-        //public void Update(int trainNo)
-        //{
-        //    using var context = new ApplicationDbContext();
+        public void Update(int trainNo)
+        {
+            using var context = new ApplicationDbContext();
 
-        //    var train = (from t in context.Trains
-        //                where t.TrainNo == trainNo
-        //                select t).FirstOrDefault();
+            var train = (from t in context.Trains
+                         where t.TrainNo == trainNo
+                         select t).FirstOrDefault();
 
-        //    Console.WriteLine("Enter Updated Train Capacity: ");
+            Console.WriteLine("Enter Updated Train Capacity: ");
 
-        //    train.Capacity = int.Parse(Console.ReadLine());
-        //    train.SeatsAvailable = train.Capacity - train.SeatsBooked;
+            train.Capacity = int.Parse(Console.ReadLine());
+            train.SeatsAvailable = train.Capacity - train.SeatsBooked;
 
-        //    context.SaveChanges();
-        //}
-        //public void Remove(int trainNo)
-        //{
-        //    using var context = new ApplicationDbContext();
+            context.SaveChanges();
+        }
+        public void Remove(int trainNo)
+        {
+            using var context = new ApplicationDbContext();
 
-        //    var train = (from t in context.Trains
-        //                 where t.TrainNo == trainNo
-        //                 select t).FirstOrDefault();
+            var train = (from t in context.Trains
+                         where t.TrainNo == trainNo
+                         select t).FirstOrDefault();
 
-        //    context.Trains.Remove(train);
+            context.Trains.Remove(train);
 
-        //    context.SaveChanges();
-        //}
+            context.SaveChanges();
+        }
         public void ReserveSeat ()
         {
             if (this.SeatsAvailable > 0) 
